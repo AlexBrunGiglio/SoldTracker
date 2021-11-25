@@ -1,15 +1,16 @@
 {
   "name": "soldtracker",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Alexandre BRUN GIGLIO",
+  "homepage": "https://alexandrebrungiglio.fr/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ionic serve -o --port=8000",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start:external": "ionic serve -external"
   },
   "private": true,
   "dependencies": {
