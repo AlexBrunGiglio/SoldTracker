@@ -1,0 +1,27 @@
+app-login {
+    .img-header {
+        img {
+            max-width: 60%;
+        }
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .welcome {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .login-form {
+        padding: 20px;
+        ion-input {
+            --background: #cdcdcd;
+            border-radius: 10px;
+            margin: 5px 0 10px 0;
+        }
+        ion-button {
+            margin-bottom: 10px;
+        }
+    }
+}

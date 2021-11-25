@@ -1,10 +1,27 @@
-<ion-header [translucent]="true">
-
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-
+    <div class="img-header">
+      <img src="/assets/icon/logo.svg" alt="">
+    </div>
+    <p class="welcome">Bienvenue sur SoldTracker. <br> Si vous possédez un compte vous pouvez vous connecter. <br> Si
+      vous ne possédez pas de compte <br>
+      <a [routerLink]="['/register']">inscrivez vous</a>
+      .
+    </p>
   </ion-header>
+  <div class="login-form">
+    <ion-label position="floating">Identifiant</ion-label>
+    <ion-input clearInput type="email"></ion-input>
+
+    <ion-label position="floating">Mot de passe</ion-label>
+    <ion-input clearInput type="password"></ion-input>
+
+    <ion-button expand="block" fill="outline">Se connecter</ion-button>
+    <ion-button expand="block" fill="outline" color="dark">
+      <ion-icon slot="icon-only" name="logo-github"></ion-icon>
+      Login with Github
+    </ion-button>
+
+  </div>
 
 </ion-content>
