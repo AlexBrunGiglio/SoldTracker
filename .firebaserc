@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "soldtracker": {
+      "hosting": {
+        "app": [
+          "soldtracker"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "soldtracker"
+  }
+}
