@@ -1,0 +1,7 @@
+{
+  "name": "soldtracker",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
