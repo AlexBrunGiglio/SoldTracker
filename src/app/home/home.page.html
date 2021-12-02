@@ -1,16 +1,54 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="container">
+    <div class="header-title">
+      <h1>Bonjour <br> Alexandre</h1>
+      <ion-button>
+        <ion-icon fill="outline" slot="icon-only" name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </div>
+    <div class="sold-account">
+      <div class="sold-data">
+        <p>Solde actuel </p>
+        <h2>700,30€</h2>
+      </div>
+    </div>
+    <div class="transactions">
+      <div class="transactions-title">
+        <div>
+          <h3>Transactions récentes :</h3>
+        </div>
+        <div class="see-all">
+          <div>
+            <span>Voir tout</span>
+          </div>
+          <div>
+            <img src="/assets/icon/chevron.svg">
+          </div>
+        </div>
+      </div>
+      <div class="list-transactions">
+        <div class="item-transactions">
+          <div class="avatar-description">
+            <div class="icon-avatar">
+              <span>🍕</span>
+            </div>
+            <div class="description">
+              <div class="company">
+                Quick
+              </div>
+              <div class="date">
+                20h02 - 17 nov 2021
+              </div>
+            </div>
+          </div>
+          <div class="price">
+            <span class="good">
+              -12,50€
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </ion-content>
