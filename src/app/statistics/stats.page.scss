@@ -1,0 +1,77 @@
+app-stats {
+    .container {
+        margin: 20px;
+    }
+    .header-title {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .inline-view {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .left-block,
+    .right-block {
+        display: flex;
+        flex-direction: column;
+        h3 {
+            text-align: center;
+            font-size: 15px;
+        }
+        .block {
+            display: flex;
+            background-color: #ffffff;
+            -webkit-box-shadow: 0px 3px 11px 1px rgb(181 181 181 / 63%);
+            box-shadow: 0px 3px 11px 1px rgb(181 181 181 / 63%);
+            border-radius: 20px;
+            padding: 20px;
+            height: 120px;
+            align-items: center;
+        }
+        .red {
+            color: #be022b;
+        }
+        .green {
+            color: #6bbaa3;
+        }
+    }
+
+    .stats {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        h4 {
+            font-size: 12px;
+        }
+        .inline-stat {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: space-around;
+            align-items: center;
+            .icon {
+                font-size: 25px;
+            }
+            .progress-bar {
+                width: 70%;
+                ion-progress-bar {
+                    --background: #bebebe;
+                    --buffer-background: #bebebe9a;
+                    --progress-background: #c21919;
+                    border-radius: 10px;
+                    height: 15px;
+                }
+            }
+            .value {
+                font-size: 15px;
+            }
+        }
+    }
+}
