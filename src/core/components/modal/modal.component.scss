@@ -63,4 +63,9 @@ app-modal-component {
             }
         }
     }
+
+    .btn-actions {
+        display: flex;
+        justify-content: space-between;
+    }
 }
