@@ -9,18 +9,19 @@
   </ion-header>
   <div class="login-form">
     <ion-label position="floating">Email</ion-label>
-    <ion-input clearInput type="email"></ion-input>
+    <ion-input clearInput type="email" [(ngModel)]="user.email"></ion-input>
 
-    <ion-label position="floating">Nom</ion-label>
-    <ion-input clearInput type="text"></ion-input>
+    <!-- <ion-label position="floating">Nom</ion-label>
+    <ion-input clearInput type="text" [(ngModel)]="user.lastName"></ion-input>
 
     <ion-label position="floating">Prénom</ion-label>
-    <ion-input clearInput type="text"></ion-input>
+    <ion-input clearInput type="text" [(ngModel)]="user.firstName"></ion-input> -->
 
     <ion-label position="floating">Mot de passe</ion-label>
-    <ion-input clearInput type="password"></ion-input>
+    <ion-input clearInput type="password" [(ngModel)]="user.password"></ion-input>
 
-    <ion-button expand="block" fill="outline">Inscription</ion-button>
+    <ion-button expand="block" fill="outline" (click)="createNewUser()">Inscription</ion-button>
+    <ion-spinner name="dots" *ngIf="loading"></ion-spinner>
     <!-- <ion-button expand="block" fill="outline" color="dark">
       <ion-icon slot="icon-only" name="logo-github"></ion-icon>
       Login with Github

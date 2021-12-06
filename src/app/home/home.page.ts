@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { ModalController } from '@ionic/angular';
 import { ModalComponent } from '../../core/components/modal/modal.component';
 
@@ -8,10 +9,16 @@ import { ModalComponent } from '../../core/components/modal/modal.component';
   styleUrls: ['home.page.scss']
 })
 export class HomePage {
-
+  items: AngularFirestoreDocument<any>;
   constructor(
     public modalController: ModalController,
-  ) { }
+    private firestore: AngularFirestore,
+  ) {
+    this.init();
+  }
+
+  async init() {
+  }
 
   async presentTransactionModal() {
     const modal = await this.modalController.create({

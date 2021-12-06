@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseAppModule } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Capacitor } from '@capacitor/core';
 import { StatusBar } from '@capacitor/status-bar';
 import 'firebase/firestore';
@@ -11,6 +14,7 @@ import 'firebase/firestore';
 })
 export class AppComponent implements OnInit {
   constructor(
+    private firestore: AngularFirestore,
   ) { }
 
   ngOnInit() {
@@ -18,7 +22,6 @@ export class AppComponent implements OnInit {
     if (platform !== 'web') {
       StatusBar.setBackgroundColor({ color: '#ffee95' });
     }
-
   }
 
 }

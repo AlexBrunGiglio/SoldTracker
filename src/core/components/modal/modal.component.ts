@@ -1,6 +1,6 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { TransactionDto } from '../../models/transaction-dto';
+import { TransactionDto } from '../../database/transactions/transaction-dto';
 
 @Component({
     selector: 'app-modal-component',
