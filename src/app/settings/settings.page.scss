@@ -1,0 +1,83 @@
+app-settings {
+    .container {
+        margin: 20px;
+        .header-title {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+              h2 {
+                font-size: 26px;
+            }
+            .profile-picture {
+                background-image: url("https://www.nextalys.com/wp-content/uploads/2021/04/alexandre-min.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 70px;
+                width: 70px;
+                border-radius: 50px;
+            }
+        }
+        .menu-list {
+            background-color: #ffffff;
+            -webkit-box-shadow: 0px 3px 11px 1px rgb(181 181 181 / 63%);
+            box-shadow: 0px 3px 11px 1px rgb(181 181 181 / 63%);
+            height: 300px;
+            width: 100%;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            ion-item {
+                margin-top: 10px;
+                .icon {
+                    height: 30px;
+                    border-radius: 10px;
+                    width: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 10px;
+                }
+                .green {
+                    background-color: #7eb8a4;
+                }
+                .purple {
+                    background-color: #908abb;
+                }
+                .dark {
+                    background-color: rgb(20, 20, 20);
+                }
+                .blue {
+                    background-color: #4650c3;
+                }
+                .red-pastel {
+                    background-color: #c34646;
+                }
+                .action {
+                    font-size: 20px;
+                    padding-top: 5px;
+                }
+                .red {
+                    p {
+                        color: #be022b;
+                    }
+                }
+            }
+        }
+        .footer {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 100px;
+            img {
+                height: 70px;
+            }
+            p {
+                text-align: center;
+                font-size: 11px;
+            }
+        }
+    }
+}

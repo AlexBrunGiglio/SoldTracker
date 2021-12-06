@@ -1,16 +1,71 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="container">
+    <div class="header-title">
+      <h2>Alexandre <br> BRUN-GIGLIO</h2>
+      <div class="profile-picture">
+      </div>
+    </div>
+    <div class="menu-list">
+      <ion-item>
+        <div class="icon green">
+          <ion-icon name="person" color="light"></ion-icon>
+        </div>
+        <div class="label">
+          Personnaliser mon profil
+        </div>
+        <div class="action" slot="end">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </ion-item>
+      <ion-item>
+        <div class="icon purple">
+          <ion-icon name="pricetags-outline" color="light"></ion-icon>
+        </div>
+        <div class="label">
+          Gestion des catégories
+        </div>
+        <div class="action" slot="end">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </ion-item>
+      <ion-item>
+        <div class="icon dark">
+          <ion-icon name="invert-mode-outline" color="light"></ion-icon>
+        </div>
+        <div class="label">
+          Thème sombre
+        </div>
+        <div slot="end">
+          <ion-toggle color="dark"></ion-toggle>
+        </div>
+      </ion-item>
+      <ion-item>
+        <div class="icon blue">
+          <ion-icon name="finger-print-outline" color="light"></ion-icon>
+        </div>
+        <div class="label">
+          Paramètre de connexion
+        </div>
+        <div class="action" slot="end">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </div>
+      </ion-item>
+      <ion-item>
+        <div class="icon red-pastel">
+          <ion-icon name="log-out-outline" color="light"></ion-icon>
+        </div>
+        <div class="red">
+          <p>Se déconnecter</p>
+        </div>
 
+      </ion-item>
+    </div>
+    <div class="footer">
+      <img src="/assets/icon/logo.svg">
+      <p class="version">v1.0.1</p>
+    </div>
+  </div>
 </ion-content>
