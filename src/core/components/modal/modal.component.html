@@ -1,0 +1,63 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-button color="light" fill="clear" slot="end" (click)="dismiss()">
+            Fermer
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ng-container *ngIf="creationMode; else showInfos">
+        <ion-item>
+            <ion-label>Label de la dépense</ion-label>
+            <ion-input placeholder="Label de la dépense" clearInput type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Prix</ion-label>
+            <ion-input placeholder="Prix" clearInput type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Catégorie</ion-label>
+            <ion-select placeholder="Catégorie">
+                <ion-select-option value="1">Catégorie 1</ion-select-option>
+                <ion-select-option value="2">Catégorie 2</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Date</ion-label>
+            <ion-datetime value="12-06-2021" display-timezone="utc" displayFormat="DD-MM-YYYY"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label>Lieux</ion-label>
+            <ion-input placeholder="Label de la dépense" clearInput type="text"></ion-input>
+        </ion-item>
+    </ng-container>
+    <ng-template #showInfos>
+        <div class="list-transactions">
+            <div class="item-transactions">
+                <div class="avatar-description">
+                    <div class="icon-avatar">
+                        <span>🍕</span>
+                    </div>
+                    <div class="description">
+                        <div class="company">
+                            Quick
+                        </div>
+                        <div class="date">
+                            20h02 - 17 nov 2021
+                        </div>
+                    </div>
+                </div>
+                <div class="price">
+                    <span class="good">
+                        -12,50€
+                    </span>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <h2>Lieux :</h2>
+    <div class="map-style">
+        map
+    </div>
+</ion-content>

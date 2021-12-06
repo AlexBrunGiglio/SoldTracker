@@ -1,0 +1,66 @@
+app-modal-component {
+    h2 {
+        margin-left: 20px;
+    }
+    .map-style {
+        padding: 30px;
+        margin-top: 50px !important;
+        margin: 30px;
+        background-color: grey;
+        height: 40vh;
+        border-radius: 20px;
+    }
+    .list-transactions {
+        display: flex;
+        flex-direction: column;
+    }
+    .item-transactions {
+        padding: 20px;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 15px;
+        margin: 10px 0 10px 0;
+        .avatar-description {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            .icon-avatar {
+                height: 50px;
+                width: 50px;
+                margin-left: 10px;
+                border-radius: 100%;
+                background-color: #ffee95;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span {
+                    font-size: 30px;
+                }
+            }
+            .description {
+                .company {
+                    font-size: 25px;
+                    font-weight: 600;
+                    padding-bottom: 5px;
+                }
+                .date {
+                    font-size: 11px;
+                    font-style: italic;
+                    color: #121212ad;
+                }
+            }
+        }
+        .price {
+            .good {
+                color: #6bbaa3;
+            }
+            .bad  {
+                color: #be022b;
+            }
+        }
+    }
+}

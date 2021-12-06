@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { RouterModule, Routes } from '@angular/router';
+import { ModalModule } from '../../core/components/modal/modal.module';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
+    ModalModule,
   ],
   declarations: [HomePage],
   exports: [RouterModule],
