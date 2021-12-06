@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as firebase from 'firebase/app';
+import { Capacitor } from '@capacitor/core';
+import { StatusBar } from '@capacitor/status-bar';
 import 'firebase/firestore';
 
 
@@ -13,6 +14,11 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    const platform = Capacitor.getPlatform();
+    if (platform !== 'web') {
+      StatusBar.setBackgroundColor({ color: '#ffee95' });
+    }
+
   }
 
 }
