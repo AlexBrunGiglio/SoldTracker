@@ -58,6 +58,7 @@
     .list-transactions {
         display: flex;
         flex-direction: column;
+        max-height: 300px;
     }
     .item-transactions {
         width: 100%;
