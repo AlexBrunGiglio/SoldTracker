@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { getAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ModalComponent } from '../../core/components/modal/modal.component';
 
@@ -12,7 +15,8 @@ export class HomePage {
   items: AngularFirestoreDocument<any>;
   constructor(
     public modalController: ModalController,
-    private firestore: AngularFirestore,
+    private afAuth: AngularFireAuth,
+    private router: Router,
   ) {
     this.init();
   }
