@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { getAuth } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
@@ -21,7 +22,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    // if (this.afAuth.currentUser) {
+    //   this.router.navigateByUrl('/tabs/home');
+    // }
   }
 
   async signIn() {
