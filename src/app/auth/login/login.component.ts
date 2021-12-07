@@ -3,7 +3,7 @@ import { getAuth } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { UserDto } from '../../../core/database/users/user-dto';
+import { UserDto, UserLogin } from '../../../core/database/users/user-dto';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ import { UserDto } from '../../../core/database/users/user-dto';
   encapsulation: ViewEncapsulation.None,
 })
 export class LoginComponent implements OnInit {
-  user: UserDto = new UserDto();
+  user: UserLogin = new UserLogin();
   loading = false;
   constructor(
     private afAuth: AngularFireAuth,
@@ -21,8 +21,10 @@ export class LoginComponent implements OnInit {
   ) {
   }
 
-  ngOnInit() {
-    // if (this.afAuth.currentUser) {
+  async ngOnInit() {
+    // const auth = await getAuth();
+    // const token = await auth.currentUser.getIdToken();
+    // if (token) {
     //   this.router.navigateByUrl('/tabs/home');
     // }
   }
