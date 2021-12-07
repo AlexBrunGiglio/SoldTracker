@@ -3,30 +3,28 @@
     <div class="img-header">
       <img src="/assets/icon/logo.svg" alt="">
     </div>
-    <p class="welcome">Bienvenue sur SoldTracker. <br> Si vous possédez un compte vous pouvez <a
-        [routerLink]="['/register']">vous connecter.</a>
+    <p class="welcome">Bienvenue sur SoldTracker. <br>
+      <ion-spinner name="dots" [style.Display]="loading ? '' : 'none'"></ion-spinner>
     </p>
   </ion-header>
   <div class="login-form">
     <ion-label position="floating">Email</ion-label>
-    <ion-input clearInput type="email" [(ngModel)]="user.email"></ion-input>
-
+    <ion-input clearInput type="email" [(ngModel)]="user.email" [disabled]="loading"></ion-input>
     <!-- <ion-label position="floating">Nom</ion-label>
     <ion-input clearInput type="text" [(ngModel)]="user.lastName"></ion-input>
 
     <ion-label position="floating">Prénom</ion-label>
     <ion-input clearInput type="text" [(ngModel)]="user.firstName"></ion-input> -->
-
     <ion-label position="floating">Mot de passe</ion-label>
-    <ion-input clearInput type="password" [(ngModel)]="user.password"></ion-input>
+    <ion-input clearInput type="password" [(ngModel)]="user.password" [disabled]="loading"></ion-input>
 
-    <ion-button expand="block" fill="outline" (click)="createNewUser()">Inscription</ion-button>
-    <ion-spinner name="dots" *ngIf="loading"></ion-spinner>
+    <ion-button expand="block" fill="outline" (click)="createNewUser()" [disabled]="loading">Inscription</ion-button>
     <!-- <ion-button expand="block" fill="outline" color="dark">
       <ion-icon slot="icon-only" name="logo-github"></ion-icon>
       Login with Github
     </ion-button> -->
-
   </div>
-
+  <div class="go-register">
+    <br> Si vous possédez un compte vous pouvez <a [routerLink]="['/register']">vous connecter.</a> <br>
+  </div>
 </ion-content>
