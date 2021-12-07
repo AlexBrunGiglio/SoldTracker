@@ -11,12 +11,12 @@
   </ion-header>
   <div class="login-form">
     <ion-label position="floating">Identifiant</ion-label>
-    <ion-input clearInput type="email"></ion-input>
+    <ion-input clearInput type="email" [(ngModel)]="user.email"></ion-input>
 
     <ion-label position="floating">Mot de passe</ion-label>
-    <ion-input clearInput type="password"></ion-input>
+    <ion-input clearInput type="password" [(ngModel)]="user.password"></ion-input>
 
-    <ion-button expand="block" fill="outline">Se connecter</ion-button>
+    <ion-button expand="block" fill="outline" (click)="signIn()">Se connecter</ion-button>
     <ion-button expand="block" fill="outline" color="dark">
       <ion-icon slot="icon-only" name="logo-github"></ion-icon>
       Login with Github
