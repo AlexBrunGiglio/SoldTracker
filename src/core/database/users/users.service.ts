@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { UserDto } from './user-dto';
-
+import { collection, query, where, getDocs } from 'firebase/firestore';
+import { Firestore } from '@angular/fire/firestore';
+import { user } from 'rxfire/auth';
 @Injectable({
     providedIn: 'root',
 })
@@ -11,16 +13,32 @@ export class UsersService {
 
     constructor(
         private db: AngularFirestore,
+        private firestore: Firestore,
     ) {
         this.usersRef = db.collection(this.dbPath);
     }
 
-    getAll(): AngularFirestoreCollection<UserDto> {
-        return this.usersRef;
+    async getAll(): Promise<UserDto[]> {
+        const users: UserDto[] = [];
+        const querySnapshot = await getDocs(collection(this.firestore, 'users'));
+        querySnapshot.forEach((doc) => {
+            users.push(doc.data as unknown as UserDto);
+        });
+        return users;
     }
 
-    create(user: UserDto): any {
-        return this.usersRef.add({ ...user });
+    async findOne(uid: string): Promise<UserDto> {
+        let getUser = new UserDto();
+        const q = query(collection(this.firestore, 'users'), where('uid', '==', uid));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            getUser = doc.data() as UserDto;
+        });
+        return getUser;
+    }
+
+    create(userDto: UserDto): any {
+        return this.usersRef.add({ ...userDto });
     }
 
     update(id: string, data: any): Promise<void> {

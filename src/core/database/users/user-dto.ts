@@ -3,8 +3,12 @@ export class UserDto {
     firstName: string;
     lastName: string;
     userName: string;
-    email: string;
     phone: string;
     solde: number;
+    uid: string;
+}
+
+export class UserLogin extends UserDto {
+    email: string;
     password: string;
 }
