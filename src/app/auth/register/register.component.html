@@ -9,13 +9,14 @@
     </p>
   </ion-header>
   <div class="login-form">
+    <ion-label position="floating">Nom</ion-label>
+    <ion-input clearInput type="text" [(ngModel)]="user.lastName"></ion-input>
+    <ion-label position="floating">Prénom</ion-label>
+    <ion-input clearInput type="text" [(ngModel)]="user.firstName"></ion-input>
+    <ion-label position="floating">Téléphone</ion-label>
+    <ion-input clearInput type="phone" [(ngModel)]="user.phone"></ion-input>
     <ion-label position="floating">Email</ion-label>
     <ion-input clearInput type="email" [(ngModel)]="user.email" [disabled]="loading"></ion-input>
-    <!-- <ion-label position="floating">Nom</ion-label>
-    <ion-input clearInput type="text" [(ngModel)]="user.lastName"></ion-input>
-
-    <ion-label position="floating">Prénom</ion-label>
-    <ion-input clearInput type="text" [(ngModel)]="user.firstName"></ion-input> -->
     <ion-label position="floating">Mot de passe</ion-label>
     <ion-input clearInput type="password" [(ngModel)]="user.password" [disabled]="loading"></ion-input>
 

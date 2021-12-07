@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { getAuth } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { UserDto } from '../../../core/database/users/user-dto';
+import { UserDto, UserLogin } from '../../../core/database/users/user-dto';
 import { UsersService } from '../../../core/database/users/users.service';
 
 @Component({
@@ -12,27 +13,28 @@ import { UsersService } from '../../../core/database/users/users.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class RegisterComponent implements OnInit {
-  user: UserDto = new UserDto();
+  user: UserLogin = new UserLogin();
   loading = false;
   constructor(
     private router: Router,
     private afAuth: AngularFireAuth,
     public alertCtrl: AlertController,
+    private userService: UsersService,
   ) { }
 
   async ngOnInit() {
-    if (this.afAuth.currentUser) {
-      this.router.navigateByUrl('/tabs/home');
-    }
+
   }
 
   async createNewUser() {
     this.loading = true;
 
     try {
-      const value = await this.afAuth.createUserWithEmailAndPassword(this.user.email, this.user.password);
+      await this.afAuth.createUserWithEmailAndPassword(this.user.email, this.user.password);
       await this.afAuth.signInWithEmailAndPassword(this.user.email, this.user.password);
-      this.router.navigateByUrl('/tabs/home');
+      const auth = await getAuth();
+      this.user.uid = auth.currentUser.uid;
+      await this.userService.create(this.user);
     }
     catch (err) {
       const alert = await this.alertCtrl.create({
