@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { UserDto } from '../../../core/database/users/user-dto';
 import { UsersService } from '../../../core/database/users/users.service';
-import { accessToken } from '../../../environments/constant';
 
 @Component({
   selector: 'app-register',
@@ -27,30 +26,23 @@ export class RegisterComponent implements OnInit {
 
   async createNewUser() {
     this.loading = true;
-    await this.afAuth.createUserWithEmailAndPassword(this.user.email, this.user.password).then(async (value) => {
-      await this.afAuth.signInWithEmailAndPassword(this.user.email, this.user.password)
-        .then(async () => {
-          this.loading = false;
-          this.router.navigateByUrl('/tabs/home');
-        }, async (error) => {
-          const alert = await this.alertCtrl.create({
-            animated: true,
-            message: error.message,
-            translucent: true,
-            mode: 'ios'
-          });
-          await alert.present();
-        });
-    }, async (error) => {
+
+    try {
+      const value = await this.afAuth.createUserWithEmailAndPassword(this.user.email, this.user.password);
+      await this.afAuth.signInWithEmailAndPassword(this.user.email, this.user.password);
+      this.router.navigateByUrl('/tabs/home');
+    }
+    catch (err) {
       const alert = await this.alertCtrl.create({
         animated: true,
-        message: error.message,
+        message: err.message,
         translucent: true,
-        id: 'ErrorLogin',
         mode: 'ios'
       });
       await alert.present();
-    });
+    }
+
     this.loading = false;
+
   }
 }
