@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { getAuth } from '@angular/fire/auth';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
-import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ModalComponent } from '../../core/components/modal/modal.component';
-
+import { UsersService } from '../../core/database/users/users.service';
+import { collection, query, where, getDocs } from 'firebase/firestore';
+import { Firestore } from '@angular/fire/firestore';
+import { UserDto } from '../../core/database/users/user-dto';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -13,15 +14,19 @@ import { ModalComponent } from '../../core/components/modal/modal.component';
 })
 export class HomePage {
   items: AngularFirestoreDocument<any>;
+  userName: string;
+  user: UserDto;
   constructor(
     public modalController: ModalController,
-    private afAuth: AngularFireAuth,
-    private router: Router,
+    private userService: UsersService,
+    private db: Firestore,
   ) {
     this.init();
   }
 
   async init() {
+    const auth = await getAuth();
+    this.user = await this.userService.findOne(auth.currentUser.uid);
   }
 
   async presentTransactionModal() {
