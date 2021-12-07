@@ -24,4 +24,10 @@ app-register {
             margin-bottom: 10px;
         }
     }
+
+    .go-register {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
 }

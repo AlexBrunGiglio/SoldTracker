@@ -4,6 +4,7 @@
       <img src="/assets/icon/logo.svg" alt="">
     </div>
     <p class="welcome">Bienvenue sur SoldTracker. <br>
+      Pour accéder à l'application merci de remplir les informations ci dessous afin de vous inscrire.
       <ion-spinner name="dots" [style.Display]="loading ? '' : 'none'"></ion-spinner>
     </p>
   </ion-header>
@@ -25,6 +26,9 @@
     </ion-button> -->
   </div>
   <div class="go-register">
-    <br> Si vous possédez un compte vous pouvez <a [routerLink]="['/register']">vous connecter.</a> <br>
+    <br> Si vous possédez un compte vous pouvez vous<br>
+    <ion-button [routerLink]="['/login']" expand="block" fill="clear" color="primary">
+      Connecter
+    </ion-button> <br>
   </div>
 </ion-content>

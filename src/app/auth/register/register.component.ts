@@ -21,7 +21,9 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
-
+    if (this.afAuth.currentUser) {
+      this.router.navigateByUrl('/tabs/home');
+    }
   }
 
   async createNewUser() {
