@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { getAuth } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { UserDto, UserLogin } from '../../../core/database/users/user-dto';
+import { UserLogin } from '../../../core/database/users/user-dto';
+import { Storage } from '@capacitor/storage';
 
 @Component({
   selector: 'app-login',
@@ -27,6 +27,10 @@ export class LoginComponent implements OnInit {
     // if (token) {
     //   this.router.navigateByUrl('/tabs/home');
     // }
+    const value = await Storage.get({ key: 'uid' });
+    if (value) {
+      this.router.navigateByUrl('/tabs/home');
+    }
   }
 
   async signIn() {
@@ -37,6 +41,10 @@ export class LoginComponent implements OnInit {
     }
     try {
       const login = await this.afAuth.signInWithEmailAndPassword(this.user.email, this.user.password);
+      await Storage.set({
+        key: 'uid',
+        value: (await this.afAuth.currentUser).uid,
+      });
       this.router.navigateByUrl('/tabs/home');
     } catch (error) {
       const alert = await this.alertCtrl.create({
