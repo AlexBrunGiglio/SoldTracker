@@ -6,4 +6,5 @@ export class TransactionDto {
     date: Date;
     value: number;
     categorie: CategoryDto;
+    place?: string;
 }
