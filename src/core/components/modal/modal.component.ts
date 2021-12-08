@@ -1,5 +1,6 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { categoriesList } from '../../../environments/constant';
 import { TransactionDto } from '../../database/transactions/transaction-dto';
 
 @Component({
@@ -11,6 +12,7 @@ import { TransactionDto } from '../../database/transactions/transaction-dto';
 export class ModalComponent {
     @Input() transaction: TransactionDto;
     creationMode = true;
+    categories = categoriesList;
     constructor(
         public modalController: ModalController,
     ) { }

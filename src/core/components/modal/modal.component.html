@@ -19,8 +19,8 @@
         <ion-item>
             <ion-label>Catégorie</ion-label>
             <ion-select placeholder="Catégorie">
-                <ion-select-option value="1">Catégorie 1</ion-select-option>
-                <ion-select-option value="2">Catégorie 2</ion-select-option>
+                <ion-select-option *ngFor="let category of categories" [value]="category">{{category.icon}}
+                    {{category.label}}</ion-select-option>
             </ion-select>
         </ion-item>
         <ion-item>
