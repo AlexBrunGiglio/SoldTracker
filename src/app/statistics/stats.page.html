@@ -3,19 +3,19 @@
     <div class="container">
       <div class="header-title">
         <h2>Votre <br> solde</h2>
-        <h2>700,30€</h2>
+        <h2>{{user?.solde |currency:'EUR'}}</h2>
       </div>
       <div class="inline-view">
         <div class="left-block">
           <h3>Dépenses</h3>
           <div class="block red">
-            - 350,00€
+            {{negativesOperations | currency:'EUR'}}
           </div>
         </div>
         <div class="right-block">
           <h3>Entrées</h3>
           <div class="block green">
-            + 1050,00€
+            + {{positivesOperations | currency:'EUR'}}
           </div>
         </div>
       </div>
