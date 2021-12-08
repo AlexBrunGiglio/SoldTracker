@@ -4,6 +4,7 @@ import { UserDto } from './user-dto';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { Firestore } from '@angular/fire/firestore';
 import { user } from 'rxfire/auth';
+import { getAuth } from '@angular/fire/auth';
 @Injectable({
     providedIn: 'root',
 })
@@ -35,6 +36,13 @@ export class UsersService {
             getUser = doc.data() as UserDto;
         });
         return getUser;
+    }
+
+    async getCurrentUser(): Promise<UserDto> {
+        let currentUser = new UserDto();
+        const auth = await getAuth();
+        currentUser = await this.findOne(auth.currentUser.uid);
+        return currentUser;
     }
 
     create(userDto: UserDto): any {
