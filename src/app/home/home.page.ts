@@ -40,6 +40,6 @@ export class HomePage {
         transactionDetails: item
       }
     });
-    return await modal.present();
+    await modal.present();
   }
 }

@@ -48,7 +48,7 @@ Start the server
 
 **Serverless:** Firebase
 
-**Native plugins :** [@capacitor/device](https://capacitorjs.com/docs/apis/device), 
+**Native plugins :** [@capacitor/device](https://capacitorjs.com/docs/apis/device), [@capacitor/splash-screen](https://capacitorjs.com/docs/apis/splash-screen),  [@capacitor/storage](https://capacitorjs.com/docs/apis/storage)
 
 
 ## Authors

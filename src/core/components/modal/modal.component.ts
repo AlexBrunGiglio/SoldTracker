@@ -22,7 +22,6 @@ export class ModalComponent implements OnInit {
     ) {
     }
     ngOnInit() {
-        console.log("🚀 ~ ModalComponent ~ transactionDetails", this.transactionDetails);
         if (this.transactionDetails) {
             this.transaction = this.transactionDetails;
             this.creationMode = false;
