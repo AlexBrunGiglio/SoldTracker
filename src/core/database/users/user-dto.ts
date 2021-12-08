@@ -1,3 +1,5 @@
+import { TransactionDto } from '../transactions/transaction-dto';
+
 export class UserDto {
     id: string;
     firstName: string;
@@ -6,6 +8,7 @@ export class UserDto {
     phone: string;
     solde: number;
     uid: string;
+    transactions: TransactionDto[];
 }
 
 export class UserLogin extends UserDto {
