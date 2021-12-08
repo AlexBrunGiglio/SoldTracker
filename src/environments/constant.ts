@@ -23,65 +23,78 @@ export const categoriesList: CategoryDto[] = [
         label: 'Restaurant',
         icon: '🍔',
         code: CategoriesType.restaurant,
+        backgroundColor: '#ffd200'
     },
     {
         label: 'Loisirs',
         icon: '🏛',
         code: CategoriesType.loisirs,
+        backgroundColor: '#a99873'
     },
     {
         label: 'Jeux-Vidéos',
         icon: '🎮',
         code: CategoriesType.jeux,
+        backgroundColor: '#ef8a8a'
     },
     {
         label: 'Courses',
         icon: '🛒',
         code: CategoriesType.courses,
+        backgroundColor: '#d9d9d9'
     },
     {
         label: 'Shopping',
         icon: '🛍',
         code: CategoriesType.shopping,
+        backgroundColor: '#E1CFFF'
     },
     {
         label: 'Voiture',
         icon: '🚘',
         code: CategoriesType.voiture,
+        backgroundColor: '#ff4949'
     },
     {
         label: 'Essence',
         icon: '⛽️',
         code: CategoriesType.essence,
+        backgroundColor: '#7e7a7a'
     },
     {
         label: 'Remboursement',
         icon: '💵',
         code: CategoriesType.remboursement,
+        backgroundColor: '#B0DC94'
     },
     {
         label: 'Retrait DAB',
         icon: '🏧',
         code: CategoriesType.retrait,
+        backgroundColor: '#5cc1f6'
     },
     {
         label: 'Epargne',
         icon: '🏦',
         code: CategoriesType.epargne,
+        backgroundColor: '#6ec259'
     },
     {
         label: 'Bar',
         icon: '🍻',
         code: CategoriesType.bar,
+        backgroundColor: '#cda7ff'
     },
     {
         label: 'Avion',
         icon: '🛩',
         code: CategoriesType.avion,
+        backgroundColor: '#B4EDFF'
     },
     {
         label: 'Bateau',
         icon: '⛴',
         code: CategoriesType.bateau,
+        backgroundColor: '#727cc3'
     },
 ];
