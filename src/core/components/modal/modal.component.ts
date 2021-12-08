@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { categoriesList } from '../../../environments/constant';
 import { TransactionDto } from '../../database/transactions/transaction-dto';
 import { UsersService } from '../../database/users/users.service';
+import { Share } from '@capacitor/share';
 
 @Component({
     selector: 'app-modal-component',
@@ -56,5 +57,12 @@ export class ModalComponent implements OnInit {
         const currentuser = await this.userService.getCurrentUser();
         await this.userService.removeTransactionOnUser(currentuser, this.transaction);
         this.dismiss();
+    }
+
+    async shareTransaction() {
+        const share = await Share.share({
+            title: 'Je vous partage ma dépense :',
+            text: 'Voici ma dépense de ' + this.transaction.label.toLowerCase() + ' d\'une valeur de ' + this.transaction.value + '€. J\'utilise SoldTracker, tu devrais l\'utiliser toi aussi ! 🚀',
+        });
     }
 }
