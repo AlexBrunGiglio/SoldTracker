@@ -8,6 +8,7 @@ import { collection, query, where, getDocs } from 'firebase/firestore';
 import { Firestore, onSnapshot, doc } from '@angular/fire/firestore';
 import { UserDto } from '../../core/database/users/user-dto';
 import { TransactionDto } from '../../core/database/transactions/transaction-dto';
+import { MainHelpers } from '../../core/services/main-helper';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -29,6 +30,7 @@ export class HomePage {
     const auth = await getAuth();
     const unsub = onSnapshot(doc(this.db, 'users', auth.currentUser.uid), (document) => {
       this.user = document.data() as UserDto;
+      this.user.transactions.sort((a, b) => MainHelpers.compareDate(b.date, a.date));
     });
   }
 
