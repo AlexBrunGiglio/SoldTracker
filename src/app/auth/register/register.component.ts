@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { getAuth } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Firestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { UserDto, UserLogin } from '../../../core/database/users/user-dto';
@@ -20,6 +22,7 @@ export class RegisterComponent implements OnInit {
     private afAuth: AngularFireAuth,
     public alertCtrl: AlertController,
     private userService: UsersService,
+    private db: AngularFirestore,
   ) { }
 
   async ngOnInit() {
