@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
-    const platform = Capacitor.getPlatform();
+    const platform = await Capacitor.getPlatform();
     if (platform !== 'web') {
       StatusBar.setBackgroundColor({ color: '#ffee95' });
     }

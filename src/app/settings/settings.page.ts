@@ -3,6 +3,7 @@ import { getAuth, signOut } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { BatteryInfo, Device, DeviceInfo } from '@capacitor/device';
 
 @Component({
   selector: 'app-settings',
@@ -11,15 +12,17 @@ import { AlertController } from '@ionic/angular';
   encapsulation: ViewEncapsulation.None,
 })
 export class SettingsPage implements OnInit {
-
+  batteryInfo: BatteryInfo;
+  deviceInfo: DeviceInfo;
   constructor(
     private router: Router,
     public afAuth: AngularFireAuth,
     public alertCtrl: AlertController,
   ) { }
 
-  ngOnInit() {
-
+  async ngOnInit() {
+    this.deviceInfo = await Device.getInfo();
+    this.batteryInfo = await Device.getBatteryInfo();
   }
 
   async logout() {

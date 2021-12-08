@@ -72,13 +72,14 @@ app-settings {
             display: flex;
             justify-content: center;
             flex-direction: column;
-            margin-top: 100px;
+            margin-top: 50px;
             img {
                 height: 70px;
             }
             p {
                 text-align: center;
                 font-size: 11px;
+                margin: 2px;
             }
         }
     }

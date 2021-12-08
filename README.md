@@ -48,6 +48,8 @@ Start the server
 
 **Serverless:** Firebase
 
+**Native plugins :** [@capacitor/device](https://capacitorjs.com/docs/apis/device), 
+
 
 ## Authors
 

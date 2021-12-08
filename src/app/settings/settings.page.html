@@ -62,6 +62,9 @@
     <div class="footer">
       <img src="/assets/icon/logo.svg">
       <p class="version">v1.0.1</p>
+      <p *ngIf="deviceInfo" class="version">{{deviceInfo.model}} -
+        {{deviceInfo.operatingSystem}}{{deviceInfo.osVersion}}</p>
+      <p *ngIf="batteryInfo" class="version">{{batteryInfo.batteryLevel|percent}}</p>
     </div>
   </div>
 </ion-content>
