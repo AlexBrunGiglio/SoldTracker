@@ -1,5 +1,5 @@
 
-![Logo]()
+![Logo](https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/a86d0af591fa81ba3d3de63dff5e3360f2c52fed/src/assets/icon/logo.svg)
 
 [![MIT License](https://img.shields.io/badge/version-v.1.0.1-blue)]()
 
