@@ -37,6 +37,8 @@ export class RegisterComponent implements OnInit {
       await this.afAuth.signInWithEmailAndPassword(this.user.email, this.user.password);
       const auth = await getAuth();
       this.user.uid = auth.currentUser.uid;
+      this.user.password = null;
+      this.user.email = null;
       await this.userService.create(this.user);
     }
     catch (err) {
