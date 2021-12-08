@@ -81,6 +81,7 @@
             .icon-avatar {
                 height: 50px;
                 width: 50px;
+                min-width: 50px;
                 margin-left: 10px;
                 border-radius: 100%;
                 background-color: #ffee95;
@@ -93,7 +94,7 @@
             }
             .description {
                 .company {
-                    font-size: 25px;
+                    font-size: 22px;
                     font-weight: 600;
                     padding-bottom: 5px;
                 }
@@ -106,9 +107,9 @@
         }
         .price {
             .good {
-                color: #6bbaa3;
+                color: #6bbaa3 !important;
             }
-            .bad  {
+            span {
                 color: #be022b;
             }
         }

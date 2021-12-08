@@ -9,7 +9,7 @@
     <div class="sold-account">
       <div class="sold-data">
         <p>Solde actuel </p>
-        <h2>700,30€</h2>
+        <h2>{{user?.solde |currency:'EUR'}}</h2>
       </div>
     </div>
     <div class="transactions">
@@ -26,87 +26,33 @@
           </div>
         </div>
       </div>
-      <div class="list-transactions">
-        <div class="item-transactions" (click)="presentTransactionModal()">
-          <div class="avatar-description">
-            <div class="icon-avatar">
-              <span>🍕</span>
-            </div>
-            <div class="description">
-              <div class="company">
-                Pizza
+      <div class="list-transactions" *ngIf="user?.transactions?.length">
+        <div class="item-transactions" *ngFor="let transaction of user.transactions;let i=index"
+          (click)="presentTransactionModal(transaction)">
+          <ng-container *ngIf="i < 4">
+            <div class="avatar-description">
+              <div class="icon-avatar" [style.backgroundColor]="transaction.categorie.backgroundColor">
+                <span>{{transaction.categorie.icon}}</span>
               </div>
-              <div class="date">
-                20h02 - 17 nov 2021
+              <div class="description">
+                <div class="company">
+                  {{transaction.label}}
+                </div>
+                <div class="date">
+                  {{transaction.date | date:'hh:mm dd/MM/yyyy'}}
+                </div>
               </div>
             </div>
-          </div>
-          <div class="price">
-            <span class="good">
-              -12,50€
-            </span>
-          </div>
+            <div class="price">
+              <span [class]="transaction.value > 0 ? 'good' : ''">
+                {{transaction.value |currency:'EUR'}}
+              </span>
+            </div>
+          </ng-container>
         </div>
-        <div class="item-transactions" (click)="presentTransactionModal()">
-          <div class="avatar-description">
-            <div class="icon-avatar">
-              <span>🍕</span>
-            </div>
-            <div class="description">
-              <div class="company">
-                Quick
-              </div>
-              <div class="date">
-                20h02 - 17 nov 2021
-              </div>
-            </div>
-          </div>
-          <div class="price">
-            <span class="good">
-              -12,50€
-            </span>
-          </div>
-        </div>
-        <div class="item-transactions" (click)="presentTransactionModal()">
-          <div class="avatar-description">
-            <div class="icon-avatar">
-              <span>🍕</span>
-            </div>
-            <div class="description">
-              <div class="company">
-                Quick
-              </div>
-              <div class="date">
-                20h02 - 17 nov 2021
-              </div>
-            </div>
-          </div>
-          <div class="price">
-            <span class="good">
-              -12,50€
-            </span>
-          </div>
-        </div>
-        <div class="item-transactions" (click)="presentTransactionModal()">
-          <div class="avatar-description">
-            <div class="icon-avatar">
-              <span>🍕</span>
-            </div>
-            <div class="description">
-              <div class="company">
-                Quick
-              </div>
-              <div class="date">
-                20h02 - 17 nov 2021
-              </div>
-            </div>
-          </div>
-          <div class="price">
-            <span class="good">
-              -12,50€
-            </span>
-          </div>
-        </div>
+      </div>
+      <div *ngIf="!user?.transactions?.length">
+        Vous n'avez aucune dépense enregistré.
       </div>
     </div>
   </div>

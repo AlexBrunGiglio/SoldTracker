@@ -5,8 +5,9 @@ import { ModalController } from '@ionic/angular';
 import { ModalComponent } from '../../core/components/modal/modal.component';
 import { UsersService } from '../../core/database/users/users.service';
 import { collection, query, where, getDocs } from 'firebase/firestore';
-import { Firestore } from '@angular/fire/firestore';
+import { Firestore, onSnapshot, doc } from '@angular/fire/firestore';
 import { UserDto } from '../../core/database/users/user-dto';
+import { TransactionDto } from '../../core/database/transactions/transaction-dto';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -26,13 +27,18 @@ export class HomePage {
 
   async init() {
     const auth = await getAuth();
-    this.user = await this.userService.findOne(auth.currentUser.uid);
+    const unsub = onSnapshot(doc(this.db, 'users', auth.currentUser.uid), (document) => {
+      this.user = document.data() as UserDto;
+    });
   }
 
-  async presentTransactionModal() {
+  async presentTransactionModal(item?: TransactionDto) {
     const modal = await this.modalController.create({
       component: ModalComponent,
       swipeToClose: true,
+      componentProps: {
+        transactionDetails: item
+      }
     });
     return await modal.present();
   }
