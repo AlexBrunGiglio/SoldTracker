@@ -10,7 +10,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:external": "ionic serve -external"
+    "start:external": "ionic serve -external",
+    "start:ios": "ionic capacitor run ios --livereload"
   },
   "private": true,
   "dependencies": {
