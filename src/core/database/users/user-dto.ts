@@ -1,7 +1,6 @@
 import { TransactionDto } from '../transactions/transaction-dto';
 
 export class UserDto {
-    id: string;
     firstName: string;
     lastName: string;
     userName: string;
