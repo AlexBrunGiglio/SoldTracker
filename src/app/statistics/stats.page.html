@@ -19,28 +19,18 @@
           </div>
         </div>
       </div>
-      <div class="stats">
+      <div class="stats" *ngIf="statWrapper">
         <h4>Statistiques</h4>
-        <div class="inline-stat">
+        <div class="inline-stat" *ngFor="let stat of statWrapper">
           <div class="icon">
-            🍕
+            {{stat.category.icon}}
           </div>
           <div class="progress-bar">
-            <ion-progress-bar type="determinate" value="0.5"></ion-progress-bar>
+            <ion-progress-bar type="determinate" [value]="stat.percentage"
+              [style]="{'--progress-background': stat.category.backgroundColor}"></ion-progress-bar>
           </div>
           <div class="value">
-            130,00€
-          </div>
-        </div>
-        <div class="inline-stat">
-          <div class="icon">
-            🍕
-          </div>
-          <div class="progress-bar">
-            <ion-progress-bar type="determinate" value="0.5"></ion-progress-bar>
-          </div>
-          <div class="value">
-            130,00€
+            {{stat.totalPrice | currency:'EUR'}}
           </div>
         </div>
       </div>
