@@ -10,26 +10,29 @@
     <ng-container *ngIf="creationMode; else showInfos">
         <ion-item>
             <ion-label>Label</ion-label>
-            <ion-input placeholder="Label de la dépense" clearInput type="text"></ion-input>
+            <ion-input placeholder="Label de la dépense" clearInput type="text" [(ngModel)]="transaction.label">
+            </ion-input>
         </ion-item>
         <ion-item>
             <ion-label>Prix</ion-label>
-            <ion-input placeholder="Prix" clearInput type="number"></ion-input>
+            <ion-input placeholder="Prix" clearInput type="number" [(ngModel)]="transaction.value"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label>Catégorie</ion-label>
-            <ion-select placeholder="Catégorie">
+            <ion-select placeholder="Catégorie" [(ngModel)]="transaction.categorie">
                 <ion-select-option *ngFor="let category of categories" [value]="category">{{category.icon}}
                     {{category.label}}</ion-select-option>
             </ion-select>
         </ion-item>
         <ion-item>
             <ion-label>Date</ion-label>
-            <ion-datetime value="12-06-2021" display-timezone="utc" displayFormat="DD-MM-YYYY"></ion-datetime>
+            <ion-datetime value="12-06-2021" display-timezone="utc" displayFormat="DD-MM-YYYY"
+                [(ngModel)]="transaction.date"></ion-datetime>
         </ion-item>
         <ion-item>
             <ion-label>Lieux</ion-label>
-            <ion-input placeholder="Label de la dépense" clearInput type="text"></ion-input>
+            <ion-input placeholder="Label de la dépense" clearInput type="text" [(ngModel)]="transaction.place">
+            </ion-input>
         </ion-item>
     </ng-container>
     <ng-template #showInfos>
@@ -37,20 +40,20 @@
             <div class="item-transactions">
                 <div class="avatar-description">
                     <div class="icon-avatar">
-                        <span>🍕</span>
+                        <span>{{transaction.categorie.icon}}</span>
                     </div>
                     <div class="description">
                         <div class="company">
-                            Quick
+                            {{transaction.label}}
                         </div>
                         <div class="date">
-                            20h02 - 17 nov 2021
+                            {{transaction.date | date:'longDate'}}
                         </div>
                     </div>
                 </div>
                 <div class="price">
                     <span class="good">
-                        -12,50€
+                        {{transaction.value |currency:'EUR'}}
                     </span>
                 </div>
             </div>
@@ -61,13 +64,13 @@
         map
     </div>
     <div class="btn-actions">
-        <ion-button fill="solid" slot="start" color="danger">
-            Annuler
+        <ion-button fill="solid" slot="start" color="danger" (click)="remove()">
+            Supprimer
         </ion-button>
-        <ion-button *ngIf="creationMode" fill="solid" slot="end" color="primary">
+        <ion-button *ngIf="creationMode" fill="solid" slot="end" color="primary" (click)="save()">
             Enregistrer
         </ion-button>
-        <ion-button *ngIf="!creationMode" fill="solid" slot="end" color="secondary">
+        <ion-button *ngIf="!creationMode" fill="solid" slot="end" color="secondary" (click)="startEditMode()">
             Modifier
         </ion-button>
     </div>
