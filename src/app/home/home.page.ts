@@ -32,7 +32,7 @@ export class HomePage {
     const unsub = onSnapshot(doc(this.db, 'users', auth.currentUser.uid), (document) => {
       this.user = document.data() as UserDto;
       // this.checkIfSoldeHaveToBeUpdateAndSet();
-      this.user.transactions?.sort((a, b) => MainHelpers.compareDate(b.date, a.date));
+      this.user?.transactions?.sort((a, b) => MainHelpers.compareDate(b.date, a.date));
     });
   }
 

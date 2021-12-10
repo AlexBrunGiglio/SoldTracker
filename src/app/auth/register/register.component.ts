@@ -4,7 +4,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { UserLogin } from '../../../core/database/users/user-dto';
+import { UserDto, UserLogin } from '../../../core/database/users/user-dto';
 import { UsersService } from '../../../core/database/users/users.service';
 import { routesList } from '../../../environments/routes';
 import { Timestamp } from 'firebase/firestore';
@@ -16,7 +16,8 @@ import { Timestamp } from 'firebase/firestore';
   encapsulation: ViewEncapsulation.None,
 })
 export class RegisterComponent implements OnInit {
-  user: UserLogin = new UserLogin();
+  user: UserDto = new UserDto();
+  userLogin: UserLogin = new UserLogin();
   loading = false;
   routesList = routesList;
   constructor(
@@ -33,16 +34,17 @@ export class RegisterComponent implements OnInit {
 
   async createNewUser() {
     this.loading = true;
-
     try {
-      await this.afAuth.createUserWithEmailAndPassword(this.user.email, this.user.password);
-      await this.afAuth.signInWithEmailAndPassword(this.user.email, this.user.password);
+      await this.afAuth.createUserWithEmailAndPassword(this.userLogin.email, this.userLogin.password);
+      await this.afAuth.signInWithEmailAndPassword(this.userLogin.email, this.userLogin.password);
       const auth = await getAuth();
       this.user.uid = auth.currentUser.uid;
-      this.user.password = null;
-      this.user.email = null;
-      this.user.lastPaidDate = (Date.parse(new Date().toISOString()) / 1000) as unknown as Timestamp;
-      this.user.paidDay = new Date().getDay();
+      this.userLogin.password = null;
+      this.userLogin.email = null;
+      // this.user.lastPaidDate = (Date.parse(new Date().toISOString()) / 1000) as unknown as Timestamp;
+      // this.user.paidDay = new Date().getDay();
+      this.user.transactions = [];
+      this.user.solde = 0;
       this.user.salary = 0;
       await this.userService.create(this.user);
     }
@@ -55,8 +57,6 @@ export class RegisterComponent implements OnInit {
       });
       await alert.present();
     }
-
     this.loading = false;
-
   }
 }
