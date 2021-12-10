@@ -5,12 +5,14 @@ import { Capacitor } from '@capacitor/core';
 import { StatusBar } from '@capacitor/status-bar';
 import { SplashScreen } from '@capacitor/splash-screen';
 
-import 'firebase/firestore'; @Component({
+import 'firebase/firestore'; import { routesList } from '../environments/routes';
+@Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  routesList = routesList;
   constructor(
     private router: Router,
   ) {
@@ -19,13 +21,13 @@ export class AppComponent implements OnInit {
       if (user) {
         const uid = user.uid;
         if (!uid) {
-          this.router.navigateByUrl('/login');
+          this.router.navigateByUrl('/' + routesList.login);
         }
         else {
-          this.router.navigateByUrl('/tabs/home');
+          this.router.navigateByUrl('/' + routesList.tabs + '/' + routesList.home);
         }
       } else {
-        this.router.navigateByUrl('/login');
+        this.router.navigateByUrl('/' + routesList.login);
       }
     });
   }

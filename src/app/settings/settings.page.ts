@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { BatteryInfo, Device, DeviceInfo } from '@capacitor/device';
+import { routesList } from '../../environments/routes';
 
 @Component({
   selector: 'app-settings',
@@ -29,7 +30,7 @@ export class SettingsPage implements OnInit {
     try {
       const auth = getAuth();
       const signout = await signOut(auth);
-      this.router.navigateByUrl('/login');
+      this.router.navigateByUrl('/' + routesList.login);
     } catch (error) {
       const alert = await this.alertCtrl.create({
         animated: true,

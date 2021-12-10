@@ -1,28 +1,33 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../../core/services/auth.guard';
+import { routesList } from '../../environments/routes';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: routesList.tabs,
     component: TabsPage,
     children: [
       {
-        path: 'home',
+        path: routesList.home,
         loadChildren: () => import('../home/home.module').then(m => m.HomeModule),
       },
       {
-        path: 'stats',
+        path: routesList.stats,
         loadChildren: () => import('../statistics/stats.module').then(m => m.StatsModule)
       },
       {
-        path: 'settings',
+        path: routesList.settings,
         loadChildren: () => import('../settings/settings.module').then(m => m.SettingsModule)
       },
       {
+        path: routesList.editUser,
+        loadChildren: () => import('../settings/edit-user/edit-user.module').then(m => m.EditUserModule)
+      },
+      {
         path: '',
-        redirectTo: '/tabs/home',
+        redirectTo: '/' + routesList.tabs + '/' + routesList.home,
         pathMatch: 'full'
       }
     ],
@@ -30,7 +35,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/home',
+    redirectTo: '/' + routesList.tabs + '/' + routesList.home,
     pathMatch: 'full'
   }
 ];

@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { UserDto, UserLogin } from '../../../core/database/users/user-dto';
 import { UsersService } from '../../../core/database/users/users.service';
+import { routesList } from '../../../environments/routes';
 
 @Component({
   selector: 'app-register',
@@ -17,6 +18,7 @@ import { UsersService } from '../../../core/database/users/users.service';
 export class RegisterComponent implements OnInit {
   user: UserLogin = new UserLogin();
   loading = false;
+  routesList = routesList;
   constructor(
     private router: Router,
     private afAuth: AngularFireAuth,

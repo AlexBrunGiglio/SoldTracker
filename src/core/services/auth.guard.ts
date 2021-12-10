@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { getAuth } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { CanActivate, Router } from '@angular/router';
+import { routesList } from '../../environments/routes';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
+    routesList = routesList;
     constructor(
         public afAuth: AngularFireAuth,
         private router: Router
@@ -15,7 +17,7 @@ export class AuthGuard implements CanActivate {
         const getAuthValue = await getAuth();
         if (!getAuthValue.currentUser) {
             isAuth = false;
-            this.router.navigate(['/login']);
+            this.router.navigate(['/' + routesList.login]);
         }
         else {
             isAuth = true;

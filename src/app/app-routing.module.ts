@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { routesList } from '../environments/routes';
 
 const routes: Routes = [
   {
@@ -7,15 +8,15 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'login',
+    path: routesList.login,
     loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule)
   },
   {
-    path: 'register',
+    path: routesList.register,
     loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule)
   },
   {
-    path: 'recover-password',
+    path: routesList.recoverPassword,
     loadChildren: () => import('./auth/recover-password/recover-password.module').then(m => m.RecoverPasswordModule)
   }
 ];

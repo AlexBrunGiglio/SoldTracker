@@ -1,15 +1,15 @@
 <ion-tabs>
 
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
+    <ion-tab-button [tab]="routesList.home">
       <ion-icon name="home" class="blue"></ion-icon>
     </ion-tab-button>
 
-    <ion-tab-button tab="stats">
+    <ion-tab-button [tab]="routesList.stats">
       <ion-icon name="stats-chart"></ion-icon>
     </ion-tab-button>
 
-    <ion-tab-button tab="settings">
+    <ion-tab-button [tab]="routesList.settings">
       <ion-icon name="cog"></ion-icon>
     </ion-tab-button>
   </ion-tab-bar>

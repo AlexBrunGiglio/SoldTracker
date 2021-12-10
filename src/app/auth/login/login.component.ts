@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { UserLogin } from '../../../core/database/users/user-dto';
 import { Storage } from '@capacitor/storage';
+import { routesList } from '../../../environments/routes';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ import { Storage } from '@capacitor/storage';
 export class LoginComponent implements OnInit {
   user: UserLogin = new UserLogin();
   loading = false;
+  routesList = routesList;
   constructor(
     private afAuth: AngularFireAuth,
     public alertCtrl: AlertController,
@@ -29,7 +31,7 @@ export class LoginComponent implements OnInit {
     // }
     const value = await Storage.get({ key: 'uid' });
     if (value) {
-      this.router.navigateByUrl('/tabs/home');
+      this.router.navigateByUrl('/' + routesList.tabs + '/' + routesList.home);
     }
   }
 
@@ -45,7 +47,7 @@ export class LoginComponent implements OnInit {
         key: 'uid',
         value: (await this.afAuth.currentUser).uid,
       });
-      this.router.navigateByUrl('/tabs/home');
+      this.router.navigateByUrl('/' + routesList.tabs + '/' + routesList.home);
     } catch (error) {
       const alert = await this.alertCtrl.create({
         animated: true,
