@@ -1,2 +1,16 @@
 app-edit-user {
+    .container {
+        padding: 20px;
+        margin-top: 60px;
+    }
+    .form {
+        margin-top: 20px;
+    }
+    ion-label {
+        font-size: large;
+        font-weight: bold;
+    }
+    ion-button {
+        margin-top: 20px;
+    }
 }

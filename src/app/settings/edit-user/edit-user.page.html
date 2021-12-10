@@ -1,0 +1,47 @@
+<ion-content [fullscreen]="true">
+    <div class="container">
+        <ion-header collapse="condense">
+            <ion-title>Modification du profil</ion-title>
+        </ion-header>
+        <div class="form" *ngIf="user">
+            <ion-label position="floating">Nom</ion-label>
+            <ion-input clearInput type="text" placeholder="Nom" [(ngModel)]="user.lastName"></ion-input>
+            <ion-label position="floating">Prénom</ion-label>
+            <ion-input clearInput type="text" placeholder="Prénom" [(ngModel)]="user.firstName"></ion-input>
+            <ion-label>Genre</ion-label>
+            <ion-select placeholder="Catégorie" [(ngModel)]="user.gender">
+                <ion-select-option value="h">Homme</ion-select-option>
+                <ion-select-option value="f">Femme</ion-select-option>
+            </ion-select>
+            <ion-label position="floating">Salaire récurrent</ion-label>
+            <ion-input clearInput type="phone" placeholder="Salaire récurrent" [(ngModel)]="user.salary"></ion-input>
+            <ion-label position="floating">Jours de paye</ion-label>
+            <ion-input clearInput type="number" placeholder="Jours mensuel de paye" [(ngModel)]="user.paidDay">
+            </ion-input>
+            <ion-label position="floating">Téléphone</ion-label>
+            <ion-input clearInput type="phone" placeholder="Téléphone" [(ngModel)]="user.phone"></ion-input>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input clearInput type="email" placeholder="Email" [(ngModel)]="userEmail"
+                (ngModelChange)="emailHasBeenEdited=true;" [disabled]="loading">
+            </ion-input>
+            <ng-container *ngIf="changePassword">
+                <ion-label position="floating">Nouveau mot de passe</ion-label>
+                <ion-input clearInput type="password" placeholder="Nouveau mot de passe" [(ngModel)]="newPassword"
+                    [disabled]="loading"></ion-input>
+            </ng-container>
+
+            <ion-button expand="block" fill="outline" (click)="save()" [disabled]="loading">Sauvegarder</ion-button>
+
+
+            <ion-button *ngIf="!changePassword" expand="block" fill="outline" color="warning"
+                (click)="changePasswordMode()" [disabled]="loading">Changer mon mot de
+                passe</ion-button>
+
+            <ion-button expand="block" fill="outline" color="danger" (click)="changePasswordMode()"
+                [disabled]="loading">
+                <ion-icon name="trash-outline"></ion-icon>
+                Supprimer mon compte
+            </ion-button>
+        </div>
+    </div>
+</ion-content>
