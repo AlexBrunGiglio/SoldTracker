@@ -11,8 +11,13 @@ app-settings {
               h2 {
                 font-size: 26px;
             }
+            .homme {
+                background-image: url("/assets/avatar.png");
+            }
+            .femme {
+                background-image: url("/assets/avatar-f.png");
+            }
             .profile-picture {
-                background-image: url("https://www.nextalys.com/wp-content/uploads/2021/04/alexandre-min.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;

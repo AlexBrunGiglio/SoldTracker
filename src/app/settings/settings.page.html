@@ -1,12 +1,12 @@
 <ion-content [fullscreen]="true">
   <div class="container">
     <div class="header-title">
-      <h2>Alexandre <br> BRUN-GIGLIO</h2>
-      <div class="profile-picture">
+      <h2>{{user?.firstName | titlecase}} <br> {{user?.lastName | uppercase}}</h2>
+      <div class="profile-picture" [class]="user?.gender === 'h' ? 'homme' : 'femme'">
       </div>
     </div>
     <div class="menu-list">
-      <ion-item [routerLink]="['/tabs/settings/edit-user']">
+      <ion-item [routerLink]="['/'+ routesList.tabs +'/'+ routesList.editUser]">
         <div class="icon green">
           <ion-icon name="person" color="light"></ion-icon>
         </div>
