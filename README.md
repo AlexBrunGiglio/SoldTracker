@@ -38,7 +38,12 @@ Start the server
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f1.png)
+![App Screenshot](https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f2.png)
+![App Screenshot](https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f3.png)
+![App Screenshot](https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f4.png)
+![App Screenshot](https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f5.png)
+![App Screenshot](https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f6.png)
 
 
 
