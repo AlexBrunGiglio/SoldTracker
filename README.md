@@ -35,6 +35,12 @@ Start the server
   npm run start
 ```
 
+Testing ios native (You may have to setup ios env)
+
+```bash
+  npm run start:ios
+```
+
 
 ## Screenshots
 

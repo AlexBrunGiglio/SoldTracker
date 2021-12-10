@@ -3,6 +3,10 @@
         <ion-button color="light" fill="clear" slot="end" (click)="dismiss()">
             Fermer
         </ion-button>
+        <ion-button color="light" fill="clear" slot="start" *ngIf="!creationMode" (click)="shareTransaction()">
+            <ion-icon name="share-outline"></ion-icon>
+        </ion-button>
+
     </ion-toolbar>
 </ion-header>
 
@@ -31,7 +35,7 @@
         </ion-item>
         <ion-item>
             <ion-label>Lieux</ion-label>
-            <ion-input placeholder="Label de la dépense" clearInput type="text" [(ngModel)]="transaction.place">
+            <ion-input placeholder="Lieu de la dépense" clearInput type="text" [(ngModel)]="transaction.place">
             </ion-input>
         </ion-item>
     </ng-container>
@@ -61,7 +65,7 @@
     </ng-template>
     <h2>Lieux :</h2>
     <div class="map-style">
-        map
+        map (coming soon)
     </div>
     <div class="btn-actions">
         <ion-button fill="solid" slot="start" color="danger" (click)="remove()">
@@ -73,6 +77,5 @@
         <ion-button *ngIf="!creationMode" fill="solid" slot="end" color="secondary" (click)="startEditMode()">
             Modifier
         </ion-button>
-        <ion-button (click)="shareTransaction()">Share</ion-button>
     </div>
 </ion-content>
