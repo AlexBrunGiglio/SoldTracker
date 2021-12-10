@@ -30,6 +30,7 @@ export class AppComponent implements OnInit {
         this.router.navigateByUrl('/' + routesList.login);
       }
     });
+    auth.useDeviceLanguage();
   }
 
   async ngOnInit() {
