@@ -12,6 +12,11 @@
     <ion-label position="floating">Nom</ion-label>
     <ion-input clearInput type="text" [(ngModel)]="user.lastName"></ion-input>
     <ion-label position="floating">Prénom</ion-label>
+    <ion-label>Genre</ion-label>
+    <ion-select placeholder="Catégorie" [(ngModel)]="user.gender">
+      <ion-select-option value="h">Homme</ion-select-option>
+      <ion-select-option value="f">Femme</ion-select-option>
+    </ion-select>
     <ion-input clearInput type="text" [(ngModel)]="user.firstName"></ion-input>
     <ion-label position="floating">Téléphone</ion-label>
     <ion-input clearInput type="phone" [(ngModel)]="user.phone"></ion-input>
