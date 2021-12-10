@@ -38,14 +38,14 @@ Start the server
 
 ## Screenshots
 
-![App Screenshot](https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f1.png)
-![App Screenshot](https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f2.png)
-![App Screenshot](https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f3.png)
-![App Screenshot](https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f4.png)
-![App Screenshot](https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f5.png)
-![App Screenshot](https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f6.png)
-
-
+<p float="left">
+  <img src="https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f1.png" width="100" />
+  <img src="https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f2.png" width="100" /> 
+  <img src="https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f3.png" width="100" />
+    <img src="https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f4.png" width="100" />
+      <img src="https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f5.png" width="100" />
+        <img src="https://raw.githubusercontent.com/AlexBrunGiglio/SoldTracker/master/src/assets/screens/f6.png" width="100" />
+</p>
 
 ## 🛠 Tech Stack
 
