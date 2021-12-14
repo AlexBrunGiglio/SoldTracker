@@ -13,6 +13,13 @@
 <ion-content>
     <ng-container *ngIf="creationMode; else showInfos">
         <ion-item>
+            <ion-label>Type</ion-label>
+            <ion-select placeholder="Type" [(ngModel)]="transactionType">
+                <ion-select-option value="negative">Dépense</ion-select-option>
+                <ion-select-option value="positive ">Revenu</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
             <ion-label>Label</ion-label>
             <ion-input placeholder="Label de la dépense" clearInput type="text" [(ngModel)]="transaction.label">
             </ion-input>

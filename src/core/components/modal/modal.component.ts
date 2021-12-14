@@ -16,6 +16,7 @@ export class ModalComponent implements OnInit {
     transaction = new TransactionDto();
     creationMode = true;
     categories = categoriesList;
+    transactionType: 'negative' | 'positive';
     constructor(
         public modalController: ModalController,
         private userService: UsersService,
@@ -36,6 +37,13 @@ export class ModalComponent implements OnInit {
         if (!this.transaction) {
             return;
         }
+        if (this.transactionType === 'negative') {
+            this.transaction.value = -Math.abs(this.transaction.value);
+        }
+        else {
+            this.transaction.value = Math.abs(this.transaction.value);
+        }
+
         const currentuser = await this.userService.getCurrentUser();
         if (!currentuser.transactions) {
             currentuser.transactions = [];
