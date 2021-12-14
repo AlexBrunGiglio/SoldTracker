@@ -6,6 +6,7 @@ export const routesList = {
 
     tabs: 'tabs',
     home: 'home',
+    transactionsList: 'home/transactions',
     stats: 'stats',
     settings: 'settings',
     editUser: 'settings/edit-user',
