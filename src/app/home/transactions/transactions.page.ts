@@ -8,6 +8,7 @@ import { TransactionDto } from '../../../core/database/transactions/transaction-
 import { UserDto } from '../../../core/database/users/user-dto';
 import { UsersService } from '../../../core/database/users/users.service';
 import { MonthList } from '../../../environments/constant';
+import { routesList } from '../../../environments/routes';
 
 interface MonthTransactionsWrapper {
     monthName: string;
@@ -29,6 +30,7 @@ export class TransactionsPage implements OnInit {
     yearsTransactions: YearTransactionsWrapper[] = [];
     auth: Auth;
     user: UserDto;
+    routesList = routesList;
     constructor(
         private db: Firestore,
         private userService: UsersService,
