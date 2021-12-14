@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { getAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
-import { ModalController } from '@ionic/angular';
+import { LoadingController, ModalController } from '@ionic/angular';
 import { ModalComponent } from '../../core/components/modal/modal.component';
 import { UsersService } from '../../core/database/users/users.service';
 import { collection, query, where, getDocs, Timestamp } from 'firebase/firestore';
@@ -21,21 +21,28 @@ export class HomePage {
   userName: string;
   user: UserDto;
   routesList = routesList;
+  loading: HTMLIonLoadingElement;
   constructor(
     public modalController: ModalController,
     private userService: UsersService,
     private db: Firestore,
+    private loadingController: LoadingController,
   ) {
     this.init();
   }
 
   async init() {
+    this.loading = await this.loadingController.create({
+      message: 'Chargement de vos informations',
+    });
+    await this.loading.present();
     const auth = await getAuth();
     const unsub = onSnapshot(doc(this.db, 'users', auth.currentUser.uid), (document) => {
       this.user = document.data() as UserDto;
       // this.checkIfSoldeHaveToBeUpdateAndSet();
       this.user?.transactions?.sort((a, b) => MainHelpers.compareDate(b.date, a.date));
     });
+    this.loading.dismiss();
   }
 
   async presentTransactionModal(item?: TransactionDto) {
