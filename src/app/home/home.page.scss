@@ -47,10 +47,11 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: flex-start;
+            text-decoration: none;
             span {
                 color: #918abf;
             }
-            div > img {
+            img {
                 height: 20px;
                 margin-left: 5px;
             }

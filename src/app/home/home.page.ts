@@ -10,6 +10,7 @@ import { UserDto } from '../../core/database/users/user-dto';
 import { TransactionDto } from '../../core/database/transactions/transaction-dto';
 import { MainHelpers } from '../../core/services/main-helper';
 import { categoriesList, CategoriesType } from '../../environments/constant';
+import { routesList } from '../../environments/routes';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -19,6 +20,7 @@ export class HomePage {
   items: AngularFirestoreDocument<any>;
   userName: string;
   user: UserDto;
+  routesList = routesList;
   constructor(
     public modalController: ModalController,
     private userService: UsersService,
