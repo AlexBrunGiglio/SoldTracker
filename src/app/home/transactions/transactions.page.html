@@ -1,0 +1,42 @@
+<ion-content [fullscreen]="true">
+    <div class="container">
+        <ion-header>
+            <ion-title>
+                Vos transactions
+            </ion-title>
+        </ion-header>
+        <div class="transactions-list">
+            <div class="year-list" *ngFor="let yearWrapper of yearsTransactions">
+                <h1>{{yearWrapper.yearValue}}</h1>
+                <div class="month-list" *ngFor="let monthTransactions of yearWrapper.monthTransactions">
+                    <h4 *ngIf="monthTransactions.transactions?.length">{{monthTransactions.monthName}}</h4>
+                    <div class="list-transactions" *ngIf="monthTransactions.transactions?.length">
+                        <ng-container *ngFor="let transaction of user.transactions;let i=index">
+                            <div class="item-transactions" *ngIf="i < 4">
+                                <div class="avatar-description">
+                                    <div class="icon-avatar"
+                                        [style.backgroundColor]="transaction.categorie.backgroundColor">
+                                        <span>{{transaction.categorie.icon}}</span>
+                                    </div>
+                                    <div class="description">
+                                        <div class="company">
+                                            {{transaction.label}}
+                                        </div>
+                                        <div class="date">
+                                            {{transaction.date | date:'hh:mm dd/MM/yyyy'}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price">
+                                    <span [class]="transaction.value > 0 ? 'good' : ''">
+                                        {{transaction.value |currency:'EUR'}}
+                                    </span>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

@@ -98,3 +98,55 @@ export const categoriesList: CategoryDto[] = [
         backgroundColor: '#727cc3'
     },
 ];
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
+export const MonthList = [
+    {
+        label: 'Janvier',
+        value: 0,
+    },
+    {
+        label: 'Février',
+        value: 1,
+    },
+    {
+        label: 'Mars',
+        value: 2,
+    },
+    {
+        label: 'Avril',
+        value: 3,
+    },
+    {
+        label: 'Mai',
+        value: 4,
+    },
+    {
+        label: 'Juin',
+        value: 5,
+    },
+    {
+        label: 'Juillet',
+        value: 6,
+    },
+    {
+        label: 'Aout',
+        value: 7,
+    },
+    {
+        label: 'Septembre',
+        value: 8,
+    },
+    {
+        label: 'Octobre',
+        value: 9,
+    },
+    {
+        label: 'Novembre',
+        value: 10,
+    },
+    {
+        label: 'Décembre',
+        value: 11,
+    }
+];

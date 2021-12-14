@@ -1,3 +1,66 @@
 app-transactions {
-    //
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 40px;
+    }
+
+    .list-transactions {
+        display: flex;
+        flex-direction: column;
+    }
+    .item-transactions {
+        width: 100%;
+        height: 60px;
+        min-height: 60px;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 15px;
+        margin: 10px 0 10px 0;
+        padding-right: 10px;
+        -webkit-box-shadow: 0px 3px 11px 1px rgb(181 181 181 / 63%);
+        box-shadow: 0px 3px 11px 1px rgb(181 181 181 / 63%);
+        .avatar-description {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            .icon-avatar {
+                height: 50px;
+                width: 50px;
+                min-width: 50px;
+                margin-left: 10px;
+                border-radius: 100%;
+                background-color: #ffee95;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span {
+                    font-size: 30px;
+                }
+            }
+            .description {
+                .company {
+                    font-size: 22px;
+                    font-weight: 600;
+                    padding-bottom: 5px;
+                }
+                .date {
+                    font-size: 11px;
+                    font-style: italic;
+                    color: #121212ad;
+                }
+            }
+        }
+        .price {
+            .good {
+                color: #6bbaa3 !important;
+            }
+            span {
+                color: #be022b;
+            }
+        }
+    }
 }
