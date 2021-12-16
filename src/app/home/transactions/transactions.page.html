@@ -15,7 +15,7 @@
                 <div class="month-list" *ngFor="let monthTransactions of yearWrapper.monthTransactions">
                     <h4 *ngIf="monthTransactions.transactions?.length">{{monthTransactions.monthName}}</h4>
                     <div class="list-transactions" *ngIf="monthTransactions.transactions?.length">
-                        <ng-container *ngFor="let transaction of user.transactions;let i=index">
+                        <ng-container *ngFor="let transaction of monthTransactions.transactions;let i=index">
                             <div class="item-transactions" *ngIf="i < 4">
                                 <div class="avatar-description">
                                     <div class="icon-avatar"

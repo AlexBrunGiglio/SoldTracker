@@ -70,6 +70,7 @@ export class ModalComponent implements OnInit {
         const share = await Share.share({
             title: 'Je vous partage ma dépense :',
             text: 'Voici ma dépense de ' + this.transaction.label.toLowerCase() + ' d\'une valeur de ' + this.transaction.value + '€. J\'utilise SoldTracker, tu devrais l\'utiliser toi aussi ! 🚀',
+            url: 'https://soldtracker.web.app/'
         });
     }
 }

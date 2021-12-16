@@ -58,9 +58,10 @@ export class TransactionsPage implements OnInit {
         this.createYearWrapper();
         for (const year of this.yearsTransactions) {
             for (const month of year.monthTransactions) {
-                month.transactions = [...this.user.transactions.filter(x => x.date && x.date.getFullYear() === year.yearValue && x.date.getMonth() === month.monthNumberValue)];
+                month.transactions = [...this.user.transactions.filter(x => x.date && (x.date.getFullYear() === year.yearValue) && (x.date.getMonth() === month.monthNumberValue))];
             }
         }
+        console.log("🚀 ~ TransactionsPage ~ setMonthTransactionWrapper ~ this.yearsTransactions", this.yearsTransactions);
     }
 
     private createYearWrapper() {
