@@ -59,7 +59,7 @@ Testing ios native (You may have to setup ios env)
 
 **Serverless:** Firebase
 
-**Native plugins :** [@capacitor/device](https://capacitorjs.com/docs/apis/device), [@capacitor/splash-screen](https://capacitorjs.com/docs/apis/splash-screen),  [@capacitor/storage](https://capacitorjs.com/docs/apis/storage)
+**Native plugins :** [@capacitor/device](https://capacitorjs.com/docs/apis/device), [@capacitor/splash-screen](https://capacitorjs.com/docs/apis/splash-screen),  [@capacitor/storage](https://capacitorjs.com/docs/apis/storage), [@capacitor/share](https://capacitorjs.com/docs/apis/share), [@capacitor/status-bar](https://capacitorjs.com/docs/apis/status-bar)
 
 
 ## Authors
